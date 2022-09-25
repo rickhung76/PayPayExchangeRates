@@ -9,15 +9,13 @@ import Foundation
 
 class CurrencyViewModel {
     
-    let dataSource: ExchangeRateDataSource
-    
-    init(dataSource: ExchangeRateDataSource = HttpClient.shared) {
-        self.dataSource = dataSource
+    private let store: PersistanceStorable
+
+    init(store: PersistanceStorable = UserDefaultsStorable.shared) {
+        self.store = store
     }
     
     func getExchangeRate() {
-        dataSource.getExchangeRate { result in
-            print(result)
-        }
+        print(store.exchangeRate)
     }
 }

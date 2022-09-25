@@ -16,6 +16,24 @@ struct ExchangeRate: Codable {
     let rates: [String: Double]
 }
 
+extension ExchangeRate: RawRepresentable {
+    typealias RawValue = Data?
+    
+    init?(rawValue: Self.RawValue) {
+        guard let data = rawValue,
+              let instance = try? JSONDecoder()
+            .decode(Self.self, from: data)
+        else {
+            return nil
+        }
+        self = instance
+    }
+    
+    var rawValue: Self.RawValue {
+        try? JSONEncoder().encode(self)
+    }
+}
+
 class ExchangeRateRequest: Request {
     
     typealias Response = ExchangeRate

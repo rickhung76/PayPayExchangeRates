@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NetworkRouter: class {
+protocol NetworkRouter: AnyObject {
     func send<T:Request>(_ route: T, decisions: [Decision]?, completion: @escaping (Result<T.Response,Error>)->())
     func cancel()
 }

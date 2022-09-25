@@ -43,6 +43,10 @@
 		4903D07B28DF5BC1000C9282 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D07A28DF5BC1000C9282 /* CurrencyViewController.swift */; };
 		4903D07E28DF5C3F000C9282 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D07D28DF5C3F000C9282 /* CurrencyViewModel.swift */; };
 		4903D08028DF5E2F000C9282 /* ExchangeRateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D07F28DF5E2F000C9282 /* ExchangeRateDataSource.swift */; };
+		4903D08328E08111000C9282 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4903D08228E08111000C9282 /* SnapKit */; };
+		4903D08628E08233000C9282 /* BackgroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08528E08233000C9282 /* BackgroundService.swift */; };
+		4903D08928E08709000C9282 /* ExchangeRateUpdateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */; };
+		4903D08B28E0912F000C9282 /* UserDefaultsStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,9 @@
 		4903D07A28DF5BC1000C9282 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		4903D07D28DF5C3F000C9282 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		4903D07F28DF5E2F000C9282 /* ExchangeRateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataSource.swift; sourceTree = "<group>"; };
+		4903D08528E08233000C9282 /* BackgroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundService.swift; sourceTree = "<group>"; };
+		4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUpdateTask.swift; sourceTree = "<group>"; };
+		4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4903D08328E08111000C9282 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +163,7 @@
 			children = (
 				4903D03D28DF5009000C9282 /* APIManager */,
 				4903D03F28DF5009000C9282 /* Entity */,
+				4903D08428E08212000C9282 /* Service */,
 				4903D07928DF57AE000C9282 /* ViewController */,
 				4903D00B28DEC211000C9282 /* AppDelegate.swift */,
 				4903D00D28DEC211000C9282 /* SceneDelegate.swift */,
@@ -280,6 +289,24 @@
 			path = Currency;
 			sourceTree = "<group>";
 		};
+		4903D08428E08212000C9282 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4903D08728E086BA000C9282 /* Task */,
+				4903D08528E08233000C9282 /* BackgroundService.swift */,
+				4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4903D08728E086BA000C9282 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,6 +323,9 @@
 			dependencies = (
 			);
 			name = PayPayExchangeRates;
+			packageProductDependencies = (
+				4903D08228E08111000C9282 /* SnapKit */,
+			);
 			productName = PayPayExchangeRates;
 			productReference = 4903D00828DEC211000C9282 /* PayPayExchangeRates.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +398,9 @@
 				Base,
 			);
 			mainGroup = 4903CFFF28DEC211000C9282;
+			packageReferences = (
+				4903D08128E08111000C9282 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4903D00928DEC211000C9282 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,6 +457,7 @@
 				4903D07028DF5009000C9282 /* JSONDecoder+Extension.swift in Sources */,
 				4903D06428DF5009000C9282 /* BadResponseStatusCodeDecision.swift in Sources */,
 				4903D06128DF5009000C9282 /* SendRequestDecision.swift in Sources */,
+				4903D08B28E0912F000C9282 /* UserDefaultsStorable.swift in Sources */,
 				4903D07828DF5100000C9282 /* ExchangeRate.swift in Sources */,
 				4903D06928DF5009000C9282 /* APIError.swift in Sources */,
 				4903D06A28DF5009000C9282 /* NetworkRouter.swift in Sources */,
@@ -437,7 +471,9 @@
 				4903D07428DF5009000C9282 /* ProgressUpdatable.swift in Sources */,
 				4903D06F28DF5009000C9282 /* Encodable+Extension.swift in Sources */,
 				4903D07628DF5009000C9282 /* Router.swift in Sources */,
+				4903D08628E08233000C9282 /* BackgroundService.swift in Sources */,
 				4903D07B28DF5BC1000C9282 /* CurrencyViewController.swift in Sources */,
+				4903D08928E08709000C9282 /* ExchangeRateUpdateTask.swift in Sources */,
 				4903D08028DF5E2F000C9282 /* ExchangeRateDataSource.swift in Sources */,
 				4903D06E28DF5009000C9282 /* Request.swift in Sources */,
 				4903D00E28DEC211000C9282 /* SceneDelegate.swift in Sources */,
@@ -638,7 +674,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -670,7 +706,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -790,6 +826,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4903D08128E08111000C9282 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4903D08228E08111000C9282 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4903D08128E08111000C9282 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4903D00028DEC211000C9282 /* Project object */;
 }

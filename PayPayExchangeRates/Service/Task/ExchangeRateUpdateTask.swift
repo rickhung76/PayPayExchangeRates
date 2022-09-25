@@ -20,9 +20,8 @@ class ExchangeRateUpdateTask: BackgroundPollingTask {
     func shouldApply(by timeInterval: Int) -> Bool {
         if accumulateTimeInterval == 0 {
             accumulateTimeInterval += timeInterval
-            return true
-            
-        } // fire at first time
+            return true // fire at first time
+        }
         accumulateTimeInterval += timeInterval
         guard accumulateTimeInterval >= repeatingTimeInterval else { return false }
         accumulateTimeInterval = 0

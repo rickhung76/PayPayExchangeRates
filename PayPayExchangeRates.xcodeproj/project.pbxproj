@@ -47,6 +47,7 @@
 		4903D08628E08233000C9282 /* BackgroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08528E08233000C9282 /* BackgroundService.swift */; };
 		4903D08928E08709000C9282 /* ExchangeRateUpdateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */; };
 		4903D08B28E0912F000C9282 /* UserDefaultsStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */; };
+		4903D08E28E0A391000C9282 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		4903D08528E08233000C9282 /* BackgroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundService.swift; sourceTree = "<group>"; };
 		4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUpdateTask.swift; sourceTree = "<group>"; };
 		4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorable.swift; sourceTree = "<group>"; };
+		4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		4903D07928DF57AE000C9282 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4903D08C28E0A37C000C9282 /* Component */,
 				4903D07C28DF5C27000C9282 /* Currency */,
 			);
 			path = ViewController;
@@ -305,6 +308,14 @@
 				4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		4903D08C28E0A37C000C9282 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 				4903D05E28DF5009000C9282 /* HttpClient.swift in Sources */,
 				4903D06228DF5009000C9282 /* RetryDecision.swift in Sources */,
 				4903D06328DF5009000C9282 /* Decisions.swift in Sources */,
+				4903D08E28E0A391000C9282 /* ToolbarPickerView.swift in Sources */,
 				4903D07328DF5009000C9282 /* MimeType.swift in Sources */,
 				4903D06028DF5009000C9282 /* ParseResultDecision.swift in Sources */,
 				4903D07028DF5009000C9282 /* JSONDecoder+Extension.swift in Sources */,

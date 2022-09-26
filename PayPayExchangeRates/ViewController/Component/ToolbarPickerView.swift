@@ -29,7 +29,13 @@ class ToolbarPickerView: UIPickerView {
     
     private func commonInit() {
         
-        let toolBar = UIToolbar()
+        let toolBar = UIToolbar(
+            frame: .init(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width,
+                height: 50)
+        )
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
         toolBar.tintColor = .black
@@ -42,8 +48,8 @@ class ToolbarPickerView: UIPickerView {
             action: #selector(self.doneTapped)
         )
         
-        let spaceButton = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
+        let space = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
             target: nil,
             action: nil
         )
@@ -55,7 +61,7 @@ class ToolbarPickerView: UIPickerView {
             action: #selector(self.cancelTapped)
         )
         
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.setItems([cancelButton, space, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         
         self.toolbar = toolBar

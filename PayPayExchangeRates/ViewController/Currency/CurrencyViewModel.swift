@@ -12,7 +12,7 @@ class CurrencyViewModel {
     
     private let store: PersistanceStorable
     
-    private let queue = DispatchQueue(label: "Serial Queue")
+    private let queue = DispatchQueue(label: "Serial Queue", qos: .userInteractive)
     
     private var exchangeRate: ExchangeRate? {
         store.exchangeRate
@@ -40,11 +40,12 @@ class CurrencyViewModel {
 
     init(
         store: PersistanceStorable = UserDefaultsStorable.shared,
-        defaultCountry: String = "USD"
+        defaultCountry: String = "USD",
+        defaultAmount: String = "0"
     ) {
         self.store = store
         self.pickedCountry = defaultCountry
-        self.amount = "0"
+        self.amount = defaultAmount
         generateCurrencyCellViewModels(with: amount)
     }
     
@@ -58,17 +59,19 @@ class CurrencyViewModel {
     }
     
     private func generateCurrencyCellViewModels(with amount: String) {
-        queue.async {
+        queue.sync {
             guard let amountValue = Double(amount),
                   let rates = self.exchangeRate?.rates else {
                 self.currencyCellVM = []
                 return
             }
             
-            self.currencyCellVM = rates.map { (key, _) in
+            self.currencyCellVM = rates
+                .sorted(by: { $0.0 < $1.0})
+                .map({ (key, _) in
                 let amount = self.exchangeCurrency(amount: amountValue, to: key)
                 return CurrencyTableViewCellVM(country: key, amount: amount)
-            }
+            })
         }
     }
 }

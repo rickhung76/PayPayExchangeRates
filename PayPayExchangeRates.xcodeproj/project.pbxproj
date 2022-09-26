@@ -48,6 +48,7 @@
 		4903D08928E08709000C9282 /* ExchangeRateUpdateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */; };
 		4903D08B28E0912F000C9282 /* UserDefaultsStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */; };
 		4903D08E28E0A391000C9282 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */; };
+		498880F028E1ECF0007BFDC5 /* ExchangeRateUpdateTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498880EF28E1ECF0007BFDC5 /* ExchangeRateUpdateTaskTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		4903D08828E08709000C9282 /* ExchangeRateUpdateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUpdateTask.swift; sourceTree = "<group>"; };
 		4903D08A28E0912F000C9282 /* UserDefaultsStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorable.swift; sourceTree = "<group>"; };
 		4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		498880EF28E1ECF0007BFDC5 /* ExchangeRateUpdateTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUpdateTaskTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		4903D02128DEC212000C9282 /* PayPayExchangeRatesTests */ = {
 			isa = PBXGroup;
 			children = (
+				498880ED28E1ECD9007BFDC5 /* Service */,
 				4903D02228DEC212000C9282 /* PayPayExchangeRatesTests.swift */,
 			);
 			path = PayPayExchangeRatesTests;
@@ -316,6 +319,22 @@
 				4903D08D28E0A391000C9282 /* ToolbarPickerView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		498880ED28E1ECD9007BFDC5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				498880EE28E1ECE2007BFDC5 /* Task */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		498880EE28E1ECE2007BFDC5 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				498880EF28E1ECF0007BFDC5 /* ExchangeRateUpdateTaskTest.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498880F028E1ECF0007BFDC5 /* ExchangeRateUpdateTaskTest.swift in Sources */,
 				4903D02328DEC212000C9282 /* PayPayExchangeRatesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

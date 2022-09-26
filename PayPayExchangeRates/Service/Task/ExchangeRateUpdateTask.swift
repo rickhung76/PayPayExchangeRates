@@ -10,7 +10,7 @@ import Foundation
 class ExchangeRateUpdateTask: BackgroundPollingTask {
     
     private let dataSource: ExchangeRateDataSource
-    private let persistanceStore: PersistanceStorable
+    private var persistanceStore: PersistanceStorable
     
     var completion: (() -> Void)?
     
@@ -29,13 +29,16 @@ class ExchangeRateUpdateTask: BackgroundPollingTask {
     }
     
     func apply() {
-        dataSource.getExchangeRate { result in
+        dataSource.getExchangeRate { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let exchangeRate):
-                print(exchangeRate)
+                self.persistanceStore.exchangeRate = exchangeRate
             case .failure(let error):
+                // TODO: Handle Error
                 print(error)
             }
+            self.completion?()
         }
     }
     

@@ -69,9 +69,9 @@ class CurrencyViewModel {
             self.currencyCellVM = rates
                 .sorted(by: { $0.0 < $1.0})
                 .map({ (key, _) in
-                let amount = self.exchangeCurrency(amount: amountValue, to: key)
-                return CurrencyTableViewCellVM(country: key, amount: amount)
-            })
+                    let amount = self.exchangeCurrency(amount: amountValue, to: key)
+                    return CurrencyTableViewCellVM(country: key, amount: amount)
+                })
         }
     }
 }

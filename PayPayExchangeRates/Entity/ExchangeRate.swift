@@ -68,7 +68,7 @@ class ExchangeRateRequest: Request {
     
     let appID: String
     
-    init(appID: String = "d701f44a8d314e5b9d732d6381acc8ac") {
+    init(appID: String = OpenExchangeRateAppID) {
         self.appID = appID
     }
 }
